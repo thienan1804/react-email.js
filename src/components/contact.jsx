@@ -12,14 +12,14 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "replace with service id",
-        "replace with template id",
+        "service_bnm9gh5",
+        "template_i9n4gw8",
         form.current,
-        "replace with user id"
+        "yRp5fguT_ouuCchqc"
       )
       .then(
         (result) => {
-          console.log(result.text);
+          console.log(result);
           console.log("message sent");
         },
         (error) => {
@@ -31,10 +31,12 @@ const Contact = () => {
   return (
     <StyledContactForm>
       <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
+        <label>Name (Người gửi)</label>
         <input type="text" name="user_name" />
-        <label>Email</label>
+        <label>Email (Người gửi)</label>
         <input type="email" name="user_email" />
+        <label>Email (Người nhận)</label>
+        <input type="email" name="to_email" />
         <label>Message</label>
         <textarea name="message" />
         <input type="submit" value="Send" />
